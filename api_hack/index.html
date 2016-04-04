@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>InstaSearch</title>
+	<link href='https://fonts.googleapis.com/css?family=Lobster|Abel' rel='stylesheet' type='text/css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<style>
+.hero_wrap { outline: 0px solid green; width: 100%; height: 150px; background-color: #51BBE3; }
+.hero_data { outline: 0px solid blue; width: 500px; margin: 0 auto; }
+.hero_pic { outline: 0px solid black; height: 100px; padding: 5px; position: relative; top: 20px; }
+.text_wrap { position: relative; display: inline-block; text-align: center; bottom: 15px; }
+.hero_text { outline: 0px solid red; width: 250px; color: white; font-family: 'lobster'; font-size: 35px; } 
+
+.form_wrap { outline: 0px solid black; width: 100%; }
+.form_data { outline: 0px solid red; width: 500px; margin: 0 auto; padding: 25px; height: 50px;}
+.enter_data { outline: 0px solid #eee; width: 400px; height: 25px; }
+.enter_item { outline: 0px solid black; width: 25px; height: 25px; position: relative; top: 7px; display: inline-block; }
+.enter_icon { height: 25px; }
+
+.tile_wrap { outline: 0px solid red; width: 100%; height: 500px; }
+.tile_data { outline: 0px dotted blue; width: 700px; margin: 0 auto; padding: 5px; }
+.tile_one, .tile_two, .tile_three { height: 150px; width: 150px; border: 5px solid #eee; display: inline-block; padding: 25px; position: relative; left: 25px; }
+</style>
+
+<script>
+$(function(){
+
+ var searchValue = "";
+
+ $('.enter_item').on("click", function(event){
+    var searchValue = $('.enter_data').val();
+    console.log(searchValue);
+}); /// - get user's search value
+
+  /*function getRequest(searchTerm){
+  var test_url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=' + searchValue +'&key=AIzaSyCwAuKBFHUSnSDMRcoO8SbJHLPGRPlLpGw'
+
+  $.getJSON(test_url, function(data){
+   console.log(data.items);
+   showResults(data.items);
+  }); /// - get request and callback function
+}; 
+
+ function showResults(results){
+   var html = "";
+   $.each(results, function(index,value){
+
+    var thumb = value.snippet.thumbnails.medium.url;
+    var video = value.id.videoId;
+    //console.log(value.snippet.title);
+    html += '<div>' + value.snippet.title + ' - ' + video +'</div><img src="' + thumb +'>';
+  });
+  $('.search_results').prepend(html);
+  }*/
+
+
+});
+</script>
+
+<body>
+
+<header>
+<div class = "hero_wrap">
+ <div class = "hero_data">
+  <img class = "hero_pic" src = "../api_hack/pics/Instagram_by_r4st3reyez-d7z5x9q.png">	
+  <div class = "text_wrap">
+   <p class = "hero_text">Insta-Search</p><!-- . hero_text - -->
+  </div><!-- . text_wrap - -->
+ </div><!-- . hero_data - -->
+</div><!-- . hero_wrap - -->
+</header>
+
+<section class = "form_wrap">
+ <div class = "form_data">
+  <input class= "enter_data" type = "text"></input><!-- . enter_data - -->
+  <div class= "enter_item">
+  	<img class = "enter_icon" type = "submit" placeholder="e.g., #cutecats" src = "../api_hack/pics/search_icon.png" required>
+  </div><!-- . enter_item - -->
+ </div><!-- . form_data - -->
+</section><!-- . form_wrap" - -->
+
+<section class = "tile_wrap">
+ <div class = "tile_data">
+  <div class = "tile_one"></div><!-- . tile_one - -->
+  <div class = "tile_two"></div><!-- . tile_two - -->
+  <div class = "tile_three"></div><!-- . tile_three - -->
+ </div><!-- . tile_data - -->
+</section><!-- . tile_wrap - -->    
+
+</body>
+</html>
